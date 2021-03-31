@@ -29,6 +29,8 @@ export default {
         @import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
         @import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
         @import url(http://cdn.jsdelivr.net/font-nanum/1.0/nanumbarungothic/nanumbarungothic.css);
+
+        @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap'); /*font-family: 'Black Han Sans', sans-serif; */
   #app {
       text-align: center;
       font-size: 70%;

@@ -48,33 +48,5 @@ export default {
             components: {
                 Carousel
             },
-
-    data(){
-        return{
-            title: "개발자의 품격",
-            title2: "welcome",
-            input1: "abcd",
-            options: [
-                {v:"S", t:"Seoul"},
-                {v:"J", t:"Jeonju"},
-                {v:"B", t:"Busan"},
-            ],
-            region: "J"
-        };
-    },
-
-    methods: {
-        getdata(){
-            alert(this.input1)
-        },
-        setdata(){
-            this.input1 = "만카이!";
-        },
-        watch:{
-            input1(){
-                console.log(this.input1);
-            }
-        }
-    }
 }
 </script>
