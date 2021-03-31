@@ -1,28 +1,40 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+
+  <div id="app" v-bind:style="{ backgroundColor:'#ffffff' }">
+        <Header />
+          <div id="content" class="content">
+            <router-view></router-view>
+          </div>
+
   </div>
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from './components/layout/Header.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Header
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+        @import url(https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap);
+        @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+        @import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+        @import url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+        @import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+        @import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+        @import url(http://cdn.jsdelivr.net/font-nanum/1.0/nanumbarungothic/nanumbarungothic.css);
+  #app {
+      text-align: center;
+      font-size: 70%;
+      font-family: 'Didact Gothic','Nanum Barun Gothic';
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      /* color: #000000; */
+    }
 </style>
