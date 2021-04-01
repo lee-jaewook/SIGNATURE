@@ -1,7 +1,7 @@
     <template>
     <div>
     <b-navbar class="nav" toggleable="lg" type="dark" variant="dark" >
-        <b-navbar-brand href="#" id="brandname">Miners</b-navbar-brand>
+        <b-navbar-brand href="#" id="brandname">SIGNATUE</b-navbar-brand>
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
         <b-collapse id="nav-collapse" is-nav>
@@ -48,8 +48,8 @@
 
     .nav{
         
-        padding-left: 3rem;
-        padding-right: 3rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
     }
     </style>
 
