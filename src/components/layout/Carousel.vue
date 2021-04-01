@@ -24,7 +24,7 @@
       
           <span>음성인식 기술을 이용하여   
             <br>간편하게 계약을 진행합니다.</span >
-
+    
       
          </div>
       </b-carousel-slide>
