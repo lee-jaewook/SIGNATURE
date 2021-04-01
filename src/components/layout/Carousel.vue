@@ -19,24 +19,27 @@
         img-src="https://i.esdrop.com/d/8CkX6dH3TM.png"
       >
         <div>
-          <h1>음성을 통한 간단한 계약</h1>
+          <h1>간단한 계약</h1>
       
-          <span>STT기술을 이용하여 일상속의 대화만을 가지고도 생활속의 간편한 계약을 진행할 수 있습니다.</span >
+          <span>STT기술을 이용하여 일상속의 대화만을 
+            <br>가지고도 간편하게 계약을 진행</span >
          </div>
       </b-carousel-slide>
 
       <!-- Slides with custom text -->
       <b-carousel-slide class="carousel" img-src="https://i.esdrop.com/d/PXcFsZCffw.png">
-         <h1>블록체인 네트워크</h1>
+         <h1>블록체인</h1>
 
-         <span >블록체인 기술을 이용하여 데이터를 분산저장하여  자료의 분실이나 조작의 위험을 배제하여 신뢰도를 향상시킵니다.</span>
+         <span >블록체인 기술을 이용하여 데이터를 
+           <br>분산저장하여 신뢰도를 향상</span>
       </b-carousel-slide>
 
       <!-- Slides with image only -->
       <b-carousel-slide class="carousel" img-src="https://i.esdrop.com/d/iwOLDLlBLX.png">
                <h1>다양한 계약서</h1>
                
-              <span>생활속에 많이 쓰이는 계약의 템플릿을 제공하여 빠르고 간편하게 계약서를 작성하실 수 있습니다.</span>
+              <span>생활속에 많이 쓰이는 계약의 템플릿을 
+                <br>제공하여 쉽고 빠른 계약서작성</span>
          </b-carousel-slide>
 
       <!-- Slides with img slot -->
@@ -55,13 +58,13 @@
         </template>
          <h1>법률 서비스</h1>
         
-             <span >계약과 관련된 여러가지 법률에 대해서 궁금하신점을  카카오톡이나 E-Mail을 통하여 상담을 진행하실 수 있습니다.</span>
+             <span >계약과 관련된 전문적인 법률 상담</span>
     </b-carousel-slide>
 
       <!-- Slide with blank fluid image to maintain slide aspect ratio -->
       <b-carousel-slide  class="carousel" img-src="https://i.esdrop.com/d/DKAdhsVqqE.png" img-alt="Blank image">
-             <h1>삶의질 향상</h1>
-                 <span >계약과 관련된 여러가지 법률에 대해서 궁금하신점을 카카오톡이나 E-Mail을 통하여 상담을 진행하실 수 있습니다.</span>
+             <h1>문서 관리</h1>
+                 <span >전자 문서를 통한 쉬운 관리</span>
         </b-carousel-slide>
     </b-carousel>
 

@@ -2,13 +2,15 @@
 <div id ="main"  >
 
      <Carousel />
-       <div style="padding:3rem">
+       <div class="card" style="padding:3rem">
         <div >
             <h4>Top and Bottom</h4>
             <b-card-group deck>
-            <b-card img-src="https://placekitten.com/1000/300" img-alt="Card image" img-top>
-                <b-card-text>
+            <b-card  img-src="https://placekitten.com/1000/300" img-alt="Card image" img-top>
+                <b-card-text class="card">
                 Some quick example text to build on the card and make up the bulk of the card's content.
+                <br>asdfasdfasdf
+                <br>asaafaf
                 </b-card-text>
             </b-card>
 
@@ -38,7 +40,9 @@
 </template>
 
 <style>
-
+    .card{
+        color: black;
+    }
 </style>
 
 <script>
