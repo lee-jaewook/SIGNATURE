@@ -1,12 +1,12 @@
     <template>
     <div>
     <b-navbar class="nav" toggleable="lg" type="dark" variant="dark" >
-        <b-navbar-brand href="#" id="brandname">SIGNATURE</b-navbar-brand>
+        <b-navbar-brand href="/" id="brandname">SIGNATURE</b-navbar-brand>
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
         <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav id="navbar">
-            <b-nav-item href="#" >계약서 작성하기</b-nav-item>
+            <b-nav-item href="/Write" >계약서 작성하기</b-nav-item>
             <b-nav-item href="#" >계약서 관리하기</b-nav-item>
             <b-nav-item href="#" >사용방법</b-nav-item>
             <b-nav-item href="#" >법률서비스 상담하기</b-nav-item>

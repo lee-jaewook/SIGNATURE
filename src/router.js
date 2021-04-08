@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "./views/Home";
 import About from "./views/About";
+import Write from "./views/Write";
 
 Vue.use(VueRouter);
 
@@ -14,6 +15,10 @@ const router = new VueRouter({
     {
         path: "/About",
         component: About
+    },
+    {
+        path: "/Write",
+        component: Write
     }]
 });
 
