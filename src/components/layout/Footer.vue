@@ -3,9 +3,10 @@
   <mdb-footer
     color="unique-color-dark"
     class="page-footer font-small pt-0"
-    style="backgroundcolor: #343a40"
+    v-bind:style="{ backgroundColor:'#343a40' }"
+    
   >
-    <div style="backgroundcolor: #6351ce">
+    <div v-bind:style="{ backgroundColor:'#6351ce' }" >
       <mdb-container class="text-left">
         <mdb-row class="py-4 d-flex align-items-center">
           <mdb-col md="6" lg="5" class="text-center text-md-left mb-4 mb-md-0">
