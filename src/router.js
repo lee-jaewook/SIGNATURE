@@ -1,8 +1,13 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "./views/Home";
-import About from "./views/About";
-import Write from "./views/Write";
+import Login from "./views/Login";
+import Signup from "./views/Signup";
+import ForgotPW from "./views/ForgotPW";
+import Contact from "./views/Contact";
+import Create from "./views/Create";
+// import GoogleLogin from './GoogleLogin.vue';
+// import LoaderPlugin from './LoderPlugin';
 
 Vue.use(VueRouter);
 
@@ -13,13 +18,25 @@ const router = new VueRouter({
         component: Home
     },
     {
-        path: "/About",
-        component: About
+        path: "/login",
+        component: Login
     },
     {
-        path: "/Write",
-        component: Write
+        path: "/contact",
+        component: Contact
+    },
+    {
+        path: "/signup",
+        component: Signup
+    },
+    {
+        path: "/forgotpassword",
+        component: ForgotPW
+    },
+    {
+        path: "/create",
+        component: Create
     }]
-});
+})
 
 export default router;
