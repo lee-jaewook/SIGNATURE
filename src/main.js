@@ -10,8 +10,11 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 import GAuth from 'vue-google-oauth2'
+
 //import GAuth from './plugins/gAuth'
 import installElement from './plugins/element/installElement.js'
+
+import vuetify from './plugins/vuetify'
 
 Vue.use(GAuth, { clientId: '235221799021-bjgjslucul3jm980aur9acp46kv0s4o2.apps.googleusercontent.com', scope: 'profile email https://www.googleapis.com/auth/plus.login' })
 Vue.use(installElement)
@@ -29,6 +32,7 @@ Vue.config.productionTip = false
 
 new Vue({
   router,
+  vuetify,
   render: h => h(App)
 }).$mount('#app')
 
