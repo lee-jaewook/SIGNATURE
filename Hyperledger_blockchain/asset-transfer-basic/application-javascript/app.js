@@ -10,7 +10,7 @@ const { Gateway, Wallets } = require('fabric-network');
 const FabricCAServices = require('fabric-ca-client');
 const express = require('express');
 const cors = require('cors');
-// const bodyparser = require("body-parser");
+
 const app = express();
 
 app.use(cors({
@@ -184,13 +184,13 @@ app.get('/', (req, res)=> {
 });
 
 app.get('/test', async (req, res) => {
-	const test1 = await main();
+	const test1 = main();
 	res.json({인사말: '안녕하세요',test: test1});
 });
 
 app.post('/test2', async (req, res) => {
 	const {data} = await req.body;
-	const result = await main2(data.name);
+	const result = main2(data.name);
 	//data.pw
 	res.json({result: result});
 
