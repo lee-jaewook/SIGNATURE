@@ -3,8 +3,12 @@
         <h1> Write</h1>
       <button type = 'button' @click="blockchain">blockchain</button>
       <input type="text" v-model="input1"/>
+
       <button type = 'button' @click="get">get</button>
       <input type="text" v-model="input2"/>
+
+      <button type = 'button' @click="read">조회</button>
+
     </div>
 </template>
 
@@ -14,13 +18,13 @@ export default {
   data() {
     return{
       input1 : "이정",
-      input2 : "제발 데이터를 받아와 주세요!"
+      input2 : "훈"
     }
   },
   methods: {
 
     async blockchain(){
-      const test = await axios.get("http://localhost:3333/test");
+      const test = await axios.get("http://localhost:3333/read");
       console.log(test.data);
 
     },
@@ -36,10 +40,14 @@ export default {
         console.log("VD:", parseData["VD"]);
 
         // 이러한 방식으로는 Object Object를 불러온다.
-        this.input2 = parseData;
+        this.input2 = parseData["VCHS"];
 
       }).catch(e => { console.error(e)});
 
+    },
+    async read(){
+      const test = await axios.get("http://localhost:3333/read");
+      console.log(test.data);
     }
   }
 }
