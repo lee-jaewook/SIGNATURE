@@ -6,6 +6,7 @@ import Signup from "./views/Signup";
 import ForgotPW from "./views/ForgotPW";
 import Contact from "./views/Contact";
 import Create from "./views/Create";
+import Write from "./views/Write";
 // import GoogleLogin from './GoogleLogin.vue';
 // import LoaderPlugin from './LoderPlugin';
 
@@ -36,7 +37,10 @@ const router = new VueRouter({
     {
         path: "/create",
         component: Create
-    }]
+    },{
+            path: "/write",
+            component: Write
+        }]
 })
 
 export default router;
