@@ -1,7 +1,8 @@
 <template>
-  <div>
-    <vue-speech />
-  </div>
+  <div class="voice">
+    <div class="speech-to-txt" @click="startSpeechToTxt">Speech to txt</div>        
+    <p>{{transcription_}}</p>
+</div>
 </template>
 
 <script>
