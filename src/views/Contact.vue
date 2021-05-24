@@ -181,7 +181,7 @@
               계약서를 만들어보세요
               <br />
               <br />
-              <b-button href="#" style="magin: 1vw" variant="outline-primary"
+              <b-button href="/Stt" style="magin: 1vw" variant="outline-primary"
                 >시작하기</b-button
               >
             </b-card-footer>

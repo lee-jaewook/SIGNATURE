@@ -35,6 +35,10 @@ const router = new VueRouter({
         component: ForgotPW
     },
     {
+        path: "/Stt",
+        component: Stt
+    },
+    {
         path: "/create",
         component: Create
     },{
