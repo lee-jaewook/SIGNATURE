@@ -7,6 +7,7 @@ import ForgotPW from "./views/ForgotPW";
 import Contact from "./views/Contact";
 import Create from "./views/Create";
 import Write from "./views/Write";
+import Stt from "./views/Stt";
 // import GoogleLogin from './GoogleLogin.vue';
 // import LoaderPlugin from './LoderPlugin';
 
