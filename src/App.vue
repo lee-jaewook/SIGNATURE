@@ -6,25 +6,16 @@
             <router-view></router-view>
           </div>
   </div>
-  <div>
-    <v-app>
-      <v-btn icon @click="save"><v-icon>mdi-check</v-icon></v-btn>
-      <v-btn icon @click="read"><v-icon>mdi-numeric</v-icon></v-btn>
-      <v-btn icon @click="readOne"><v-icon>mdi-numeric</v-icon></v-btn>
-    </v-app>
-  </div>
 </body>
 </template>
 
 <script>
 import Header from './components/layout/Header.vue';
-import Sign from './views/Sign'
 
 export default {
   name: 'App',
   components: {
-    Header,
-    Sign
+    Header
   },
   mounted () {
     console.log(this.$firebase)

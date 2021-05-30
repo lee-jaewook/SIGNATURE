@@ -15,21 +15,7 @@
 
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
-          <b-nav-item-dropdown size="sm" right>
-            <!-- Using 'button-content' slot -->
-            <template #button-content>
-              <em>유저이름</em>
-            </template>
-            <b-dropdown-item
-              @click="userSignOut"
-              style="font-size: 70%; text-align: center"
-              href="#"
-              >마이페이지</b-dropdown-item
-            >
-            <b-dropdown-item style="font-size: 70%; text-align: center" href="#"
-              >로그아웃</b-dropdown-item
-            >
-          </b-nav-item-dropdown>
+          <Signpage/>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
@@ -49,8 +35,11 @@
 
     <script>
 import { Auth } from "aws-amplify";
+import Signpage from '../../views/Sign'
+
 export default {
   name: "header",
+  components: {Signpage},
   methods: {
     async userSignOut() {
       try {
