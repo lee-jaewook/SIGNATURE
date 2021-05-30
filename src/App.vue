@@ -9,6 +9,8 @@
   <div>
     <v-app>
       <v-btn icon @click="save"><v-icon>mdi-check</v-icon></v-btn>
+      <v-btn icon @click="read"><v-icon>mdi-numeric</v-icon></v-btn>
+      <v-btn icon @click="readOne"><v-icon>mdi-numeric</v-icon></v-btn>
     </v-app>
   </div>
 </body>
@@ -16,11 +18,13 @@
 
 <script>
 import Header from './components/layout/Header.vue';
+import Sign from './views/Sign'
 
 export default {
   name: 'App',
   components: {
-    Header
+    Header,
+    Sign
   },
   mounted () {
     console.log(this.$firebase)
@@ -31,6 +35,16 @@ export default {
       this.$firebase.database().ref().child('abcd').set({
         title: 'abscd', text: 'tttt'
       })
+    },
+    read () {
+      this.$firebase.database().ref().child('abcd').on('value', (sn)=>{
+        console.log(sn)
+        console.log(sn.val())
+      })
+    },
+    async readOne () {
+      const sn = await this.$firebase.database().ref().child('abcd').on('value')
+      console.log(sn.val())
     }
   }
 }
