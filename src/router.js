@@ -9,7 +9,6 @@ import Create from "./views/Create";
 import Write from "./views/Write";
 import Stt from "./views/Stt";
 import Test from "./views/Test";
-import Sign from "./views/Sign";
 // import GoogleLogin from './GoogleLogin.vue';
 // import LoaderPlugin from './LoderPlugin';
 
@@ -40,10 +39,6 @@ const router = new VueRouter({
     {
         path: "/Stt",
         component: Stt
-    },
-    {
-        path: "/Sign",
-        component: Sign
     },
     {
         path: "/Test",
