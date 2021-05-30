@@ -6,6 +6,11 @@
             <router-view></router-view>
           </div>
   </div>
+  <div>
+    <v-app>
+      <v-btn icon @click="save"><v-icon>mdi-check</v-icon></v-btn>
+    </v-app>
+  </div>
 </body>
 </template>
 
@@ -16,6 +21,17 @@ export default {
   name: 'App',
   components: {
     Header
+  },
+  mounted () {
+    console.log(this.$firebase)
+  },
+  methods: {
+    save () {
+      console.log('save@@@')
+      this.$firebase.database().ref().child('abcd').set({
+        title: 'abscd', text: 'tttt'
+      })
+    }
   }
 }
 </script>
