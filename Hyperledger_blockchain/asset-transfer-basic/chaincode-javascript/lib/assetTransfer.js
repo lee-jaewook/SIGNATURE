@@ -56,7 +56,7 @@ class AssetTransfer extends Contract {
             VCHS: vchs,
             Pw: pw,
         };
-        ctx.stub.putState(id, Buffer.from(JSON.stringify(asset)));
+        ctx.stub.putState("user", Buffer.from(JSON.stringify(asset)));
         return JSON.stringify(asset);
     }
 
@@ -71,7 +71,7 @@ class AssetTransfer extends Contract {
 
     // UpdateAsset updates an existing asset in the world state with provided parameters.
     async UpdateAsset(ctx, id, vc, vd, vchs, pw) {
-        const exists = await this.AssetExists(ctx, id);
+        const exists = this.AssetExists(ctx, id);
         if (!exists) {
             throw new Error(`The asset ${id} does not exist`);
         }
@@ -89,7 +89,7 @@ class AssetTransfer extends Contract {
 
     // DeleteAsset deletes an given asset from the world state.
     async DeleteAsset(ctx, id) {
-        const exists = await this.AssetExists(ctx, id);
+        const exists = this.AssetExists(ctx, id);
         if (!exists) {
             throw new Error(`The asset ${id} does not exist`);
         }
@@ -104,7 +104,7 @@ class AssetTransfer extends Contract {
 
     // TransferAsset updates the owner field of asset with given id in the world state.
     async TransferAsset(ctx, id, newOwner) {
-        const assetString = await this.ReadAsset(ctx, id);
+        const assetString = this.ReadAsset(ctx, id);
         const asset = JSON.parse(assetString);
         asset.Owner = newOwner;
         return ctx.stub.putState(id, Buffer.from(JSON.stringify(asset)));

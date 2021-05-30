@@ -12,10 +12,8 @@ const express = require('express');
 const cors = require('cors');
 
 const app = express();
+app.use(cors());
 
-app.use(cors({
-	origin: 'http://localhost:8080',
-}));
 app.use(express.json());
 const path = require('path');
 const { buildCAClient, registerAndEnrollUser, enrollAdmin } = require('../../test-application/javascript/CAUtil.js');
@@ -31,6 +29,46 @@ function prettyJSONString(inputString) {
 	return JSON.stringify(JSON.parse(inputString), null, 2);
 }
 
+async function main3() {
+	try {
+
+		const ccp = buildCCPOrg1();
+		const caClient = buildCAClient(FabricCAServices, ccp, 'ca.org1.miners.sw');
+		const wallet = await buildWallet(Wallets, walletPath);
+		await enrollAdmin(caClient, wallet, mspOrg1);
+		await registerAndEnrollUser(caClient, wallet, mspOrg1, org1UserId, 'org1.department1');
+		const gateway = new Gateway();
+
+		try {
+
+			await gateway.connect(ccp, {
+				wallet,
+				identity: org1UserId,
+				discovery: { enabled: true, asLocalhost: true }
+			});
+			const network = await gateway.getNetwork(channelName);
+			const contract = network.getContract(chaincodeName);
+
+
+			console.log('\n--> 초기 블록에 저장될 계약 내용들을 만들어 저장한다.');
+			console.log('\n--> Submit Transaction: InitLedger, function creates the initial set of assets on the ledger');
+			await contract.submitTransaction('InitLedger');
+			console.log('*** Result: committed');
+
+			console.log('\n--> 초기 블록에 저장될 테스트 계약 내용들이 잘 저장 되었는지 확인하기 위해 전체 계약을 조회한다.')
+			console.log('\n--> Evaluate Transaction: GetAllAssets, function returns all the current assets on the ledger');
+			let result = await contract.evaluateTransaction('GetAllAssets');
+			console.log(`*** Result: ${prettyJSONString(result.toString())}`);
+			return result.toString();
+
+		} finally {
+
+			gateway.disconnect();
+		}
+	} catch (error) {
+		console.error(`******** FAILED to run the application: ${error}`);
+	}
+}
 
 async function main2(data) {
 	try {
@@ -188,6 +226,12 @@ app.get('/test', async (req, res) => {
 	res.json({인사말: '안녕하세요',test: test1});
 });
 
+app.get('/test3', async (req, res) => {
+	const test1 = main();
+	res.json({인사말: '안녕하세요',test: test1});
+});
+
+
 app.post('/test2', async (req, res) => {
 	const {data} = await req.body;
 	const result = main2(data.name);
@@ -197,5 +241,5 @@ app.post('/test2', async (req, res) => {
 });
 
 app.listen(3333, ()=> {
-	console.log('3천포트 열림 ㅈ같은 블록체인');
+	console.log('3천포트 열림 은 블록체인');
 });
