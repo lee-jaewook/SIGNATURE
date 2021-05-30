@@ -19,6 +19,7 @@
     "express": "^4.17.1",
     "fabric-ca-client": "^2.2.5",
     "fabric-network": "^2.2.5",
+    "firebase": "^8.6.3",
     "mdbvue": "^6.7.2",
     "vue": "^2.6.12",
     "vue-google-login": "^2.0.5",

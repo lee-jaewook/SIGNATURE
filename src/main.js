@@ -16,6 +16,7 @@ import GAuth from 'vue-google-oauth2'
 import installElement from './plugins/element/installElement.js'
 
 import vuetify from './plugins/vuetify'
+import './plugins/firebase'
 
 Vue.use(VueWebSpeech)
 Vue.use(GAuth, { clientId: '235221799021-bjgjslucul3jm980aur9acp46kv0s4o2.apps.googleusercontent.com', scope: 'profile email https://www.googleapis.com/auth/plus.login' })
