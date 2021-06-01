@@ -115,6 +115,7 @@ export default {
       //   //on fail do something
       // });
     },
+    
     async handleClickSignIn() {
       try {
         const googleUser = await this.$gAuth.signIn();

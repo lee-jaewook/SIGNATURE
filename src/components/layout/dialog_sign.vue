@@ -2,11 +2,14 @@
   <v-card>
     <v-toolbar dense color="primary" dark flat>
       <v-toolbar-title>
-        {{ modeIn ? '로그인' : '회원가입'}}
+        {{ modeIn ? "로그인" : "회원가입" }}
       </v-toolbar-title>
-      <v-spacer/>
-      <v-btn text @click="modeIn=!modeIn">
-        <v-icon left v-text="modeIn ? 'mdi-account-plus' : 'mdi-account'"></v-icon>
+      <v-spacer />
+      <v-btn text @click="modeIn = !modeIn">
+        <v-icon
+          left
+          v-text="modeIn ? 'mdi-account-plus' : 'mdi-account'"
+        ></v-icon>
         <span v-text="modeIn ? '회원가입' : '로그인'"></span>
       </v-btn>
       <v-btn icon @click="$emit('close')"><v-icon>mdi-close</v-icon></v-btn>
@@ -17,8 +20,10 @@
           <template v-if="modeIn">
             <v-alert color="info" dark border="left" outlined height="100%">
               <ul>
-                <li>{{site.title}}({{site.description}}) 에 오신걸 환영합니다~</li>
-                <br>
+                <li>
+                  {{ site.title }}({{ site.description }}) 에 오신걸 환영합니다~
+                </li>
+                <br />
                 <li>그리팅 메세지 리얼타임으로 변경 예정..</li>
               </ul>
             </v-alert>
@@ -27,11 +32,20 @@
             <v-alert color="primary" border="left" outlined height="100%">
               <ul>
                 <li>소셜 로그인 시 회원가입이 필요 없습니다</li>
-                <li>소셜 가입시 이메일(email), 표시이름(displayName: 실명 아님), 사진(photoURL: 소셜 제공)이 저장됩니다.</li>
-                <li>이메일 가입시 이메일(email)과 표시이름(displayName: 실명 아님)이 저장됩니다.</li>
+                <li>
+                  소셜 가입시 이메일(email), 닉네임,사진이 저장됩니다.
+                </li>
+                <li>
+                  이메일 가입시 이메일(email)과 닉네임이 저장됩니다.
+                </li>
                 <li>이메일 가입시 메일 확인 후 정상 동작합니다</li>
-                <li>패스워드는 구글 정책(firebase auth)에 의해 암호화되어 저장되며 이 사이트에서는 수집하지 않습니다</li>
-                <li>회원 탈퇴 후 7일 후에 모든 데이터가 삭제됩니다.(재가입 방지)</li>
+                <li>
+                  패스워드는 구글 정책(firebase auth)에 의해 암호화되어 저장되며
+                  이 사이트에서는 수집하지 않습니다
+                </li>
+                <li>
+                  회원 탈퇴 후 7일 후에 모든 데이터가 삭제됩니다.(재가입 방지)
+                </li>
                 <li>일부 기능은 관리자의 승인 후 사용할 수 있습니다</li>
               </ul>
             </v-alert>
@@ -43,10 +57,10 @@
             <template>
               <v-subheader>
                 소셜 로그인
-                <v-spacer/>
+                <v-spacer />
               </v-subheader>
               <v-card-actions>
-                <v-btn block color="#dd4b39" dark @click="signInWithGoogle">
+                <v-btn block color="#dd4b39" dark @click="signInWithFacebook">
                   <v-icon left>mdi-google</v-icon>
                   <span>구글 로그인</span>
                 </v-btn>
@@ -59,12 +73,12 @@
               </v-card-actions>
             </template>
 
-            <v-divider/>
+            <v-divider />
 
             <template v-if="modeIn">
               <v-subheader>
                 이메일 로그인
-                <v-spacer/>
+                <v-spacer />
               </v-subheader>
               <v-card-text>
                 <v-text-field
@@ -75,7 +89,8 @@
                   type="email"
                   autocomplete="email"
                   required
-                  class="mb-4"/>
+                  class="mb-4"
+                />
                 <v-text-field
                   v-model="password"
                   type="password"
@@ -83,10 +98,11 @@
                   label="비밀번호"
                   hide-details
                   required
-                  @keypress.native.enter="signInWithEmail"/>
+                  @keypress.native.enter="signInWithEmail"
+                />
               </v-card-text>
               <v-card-actions>
-                <v-btn block color="primary" @click="signInWithEmail">
+                <v-btn block color="dark" @click="signInWithEmail">
                   <v-icon left>mdi-email</v-icon>
                   로그인
                 </v-btn>
@@ -104,7 +120,8 @@
                   type="email"
                   autocomplete="email"
                   required
-                  class="mb-4"/>
+                  class="mb-4"
+                />
                 <v-text-field
                   v-model="displayName"
                   outlined
@@ -112,7 +129,8 @@
                   hide-details
                   type="text"
                   required
-                  class="mb-4"/>
+                  class="mb-4"
+                />
                 <v-text-field
                   v-model="password"
                   type="password"
@@ -120,10 +138,11 @@
                   label="비밀번호"
                   hide-details
                   required
-                  @keypress.native.enter="signUpWithEmail"/>
+                  @keypress.native.enter="signUpWithEmail"
+                />
               </v-card-text>
               <v-card-actions>
-                <v-btn block color="info" @click="signUpWithEmail">
+                <v-btn block color="dark" @click="signUpWithEmail">
                   <v-icon left>mdi-email</v-icon>
                   회원가입
                 </v-btn>
@@ -136,41 +155,57 @@
   </v-card>
 </template>
 <script>
+import { mapGetters } from 'vuex';
 export default {
-  data () {
+  data() {
     return {
       site: {
         title: process.env.VUE_APP_SITE_TITLE,
-        description: process.env.VUE_APP_SITE_DESCRIPTION
+        description: process.env.VUE_APP_SITE_DESCRIPTION,
       },
       loading: false,
       modeIn: true,
-      email: '',
-      password: '',
-      displayName: ''
-    }
+      email: "",
+      password: "",
+      displayName: "",
+    };
   },
+      computed: {
+        ...mapGetters('user', {
+        loggedIn: 'loggedIn',
+        userProfile: 'userProfile'
+      }),
+    },
   methods: {
-    async signInWithEmail () {
-      throw Error('나중에 만들께요')
+    async signInWithEmail() {
+      throw Error("나중에 만들께요");
     },
-    async signUpWithEmail () {
-      throw Error('나중에 만들께요')
+    async signUpWithEmail() {
+      throw Error("나중에 만들께요");
     },
-    async signInWithGoogle () {
+    async signInWithGoogle() {
+      const provider = new this.$firebase.auth.GoogleAuthProvider();
+      this.$firebase.auth().languageCode = "korean";
+      this.loading = true;
+      try {
+        // await this.$firebase.auth().signInWithPopup(provider);
+        const sn = await this.$firebase.auth().signInWithPopup(provider)
+        this.$store.commit('setFireUser', sn.user)
+      } finally {
+        this.loading = false;
+      }
+    },
+    signInWithFacebook()  {
       const provider = new this.$firebase.auth.GoogleAuthProvider()
+      this.$firebase.auth().languageCode = 'ko'
       this.loading = true
       try {
-        await this.$firebase.auth().signInWithPopup(provider)
-        // const sn = await this.$firebase.auth().signInWithPopup(provider)
-        // this.$store.commit('setFireUser', sn.user)
+        const sn =  this.$firebase.auth().signInWithPopup(provider)
+        this.$store.commit('setFireUser', sn.user)
       } finally {
         this.loading = false
       }
     },
-    signInWithFacebook () {
-      throw Error('나중에 만들께요')
-    }
-  }
-}
+  },
+};
 </script>

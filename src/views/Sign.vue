@@ -69,7 +69,7 @@
     </v-menu>
 </template>
 <script>
-import DialogSign from '../components/layout/dialog-sign'
+import DialogSign from '../components/layout/dialog_sign'
 import constants from '../plugins/constants'
 
 export default {

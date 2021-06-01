@@ -57,8 +57,8 @@
             class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto"
             style="width: 60px"
           />
-          <p><a href="#!">계약서 작성하기</a></p>
-          <p><a href="#!">구두계약 이용하기</a></p>
+          <p><a router-link to='/contact'>계약서 작성하기</a></p>
+          <p><a router-link to='/stt'>구두계약 이용하기</a></p>
         </mdb-col>
         <mdb-col md="3" lg="2" xl="2" class="mb-4">
           <h6 class="text-uppercase font-weight-bold" style="color: white">
@@ -68,10 +68,10 @@
             class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto"
             style="width: 60px"
           />
-          <p><a href="#!">마이페이지</a></p>
-          <p><a href="#!">계약서 관리하기</a></p>
-          <p><a href="#!">자주 묻는 질문</a></p>
-          <p><a href="#!">서비스 이용하기</a></p>
+          <p><a router-link to='/mypage'>마이페이지</a></p>
+          <p><a router-link to='/managing'>계약서 관리하기</a></p>
+          <p><a router-link to='/service'>자주 묻는 질문</a></p>
+          <p><a router-link to='/service'>서비스 이용하기</a></p>
         </mdb-col>
         <mdb-col md="4" lg="3" xl="3" class="mb-4">
           <h6 class="text-uppercase font-weight-bold" style="color: white">
@@ -91,7 +91,7 @@
     <div class="footer-copyright text-center py-3">
       <mdb-container fluid style="color: white">
         &copy; Copyright @ 2021
-        <a href="https://www.MDBootstrap.com"> SIGNATURE </a> Inc. 모든 권리
+        <a router-link to='/'> SIGNATURE </a> Inc. 모든 권리
         보유.
       </mdb-container>
     </div>

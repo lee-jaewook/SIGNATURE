@@ -38,7 +38,7 @@
                       </template>
 
                       <b-card-text style="color: black"></b-card-text>
-                      <b-button href="#" variant="outline-primary"
+                      <b-button router-link to='/create' variant="outline-primary"
                         >작성하기</b-button
                       >
                     </b-card>
@@ -51,7 +51,7 @@
                         <h6 class="mb-0">인사/노무</h6>
                       </template>
                       <b-card-text style="color: black"></b-card-text>
-                      <b-button href="#" variant="outline-primary"
+                      <b-button router-link to='/create' variant="outline-primary"
                         >작성하기</b-button
                       >
                       <template #footer>
@@ -74,7 +74,7 @@
                         <h6 class="mb-0">보안</h6>
                       </template>
                       <b-card-text style="color: black"></b-card-text>
-                      <b-button href="#" variant="outline-primary"
+                      <b-button router-link to='/create' variant="outline-primary"
                         >작성하기</b-button
                       >
                       <template #footer>
@@ -114,7 +114,7 @@
                         </div>
                       </template>
                       <b-card-text style="color: black"></b-card-text>
-                      <b-button href="#" variant="outline-primary"
+                      <b-button router-link to='/create' variant="outline-primary"
                         >작성하기</b-button
                       >
                     </b-card>
@@ -151,7 +151,7 @@
                         <h6 class="mb-0">부동산</h6>
                       </template>
                       <b-card-text style="color: black"></b-card-text>
-                      <b-button href="#" variant="outline-primary"
+                      <b-button router-link to='/create' variant="outline-primary"
                         >작성하기</b-button
                       >
                       <template #footer>
