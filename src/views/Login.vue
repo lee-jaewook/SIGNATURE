@@ -28,58 +28,6 @@
         Sign Up
       </button>
 
-      <div class="hello">
-        <el-row>
-          <el-button
-            type="primary"
-            icon="fas fa-edit"
-            @click="handleClickLogin"
-            :disabled="!isInit"
-            >get authCode</el-button
-          >
-          <el-button
-            type="primary"
-            icon="fas fa-edit"
-            @click="handleClickSignIn"
-            v-if="!isSignIn"
-            :disabled="!isInit"
-            >sign in</el-button
-          >
-          <el-button
-            type="primary"
-            icon="fas fa-edit"
-            @click="handleClickSignOut"
-            v-if="isSignIn"
-            :disabled="!isInit"
-            >sign out</el-button
-          >
-          <el-button
-            type="primary"
-            icon="fas fa-edit"
-            @click="handleClickDisconnect"
-            :disabled="!isInit"
-            >disconnect</el-button
-          >
-          <i class="fas fa-edit"></i>
-          <p>isInit: {{ isInit }}</p>
-          <p>isSignIn: {{ isSignIn }}</p>
-          <GoogleLogin
-            :params="params"
-            :renderParams="renderParams"
-            :onSuccess="onSuccess"
-            :onFailure="onFailure"
-            >asdf</GoogleLogin
-          >
-          <el-button
-            type="primary"
-            icon="fas fa-edit"
-            @click="handleClickUpdateScope"
-            :disabled="!isInit"
-            >update scope</el-button
-          >
-        </el-row>
-      </div>
-
       <GoogleLogin
         click="handleClickSignIn"
         :params="params"
@@ -93,6 +41,7 @@
           src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=http%3A%2F%2Fcfile27.uf.tistory.com%2Fimage%2F998689465C3D7D1217F053"
         />
       </GoogleLogin>
+      
       <KaKaoLogin
         :params="params"
         :renderParams="renderParams"
