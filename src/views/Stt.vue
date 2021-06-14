@@ -1,49 +1,54 @@
 <template>
   <div class="voice">
-    <div class="speech-to-txt" @click="startSpeechToTxt">Speech to txt</div>        
+    <v-btn class="speech-to-txt" @click="startSpeechToTxt"
+      elevation="2"
+      fab
+      large
+      loading
+    >계약서 작성 시작
+    </v-btn>
+    <!-- <div class="speech-to-txt" @click="startSpeechToTxt">Speech to txt</div>         -->
     <p>{{transcription_}}</p>
-</div>
+  </div>
 </template>
 
 <script>
 
   export default {
-   name: 'speech_to_text',
-   data() {
-     return {
-       runtimeTranscription_: "",
-       transcription_: [],
-       lang_: "ko"
-     };
-   },
-   methods: {
-    startSpeechToTxt() {
-    // initialisation of voicereco
-    
-    window.SpeechRecognition =
-    window.SpeechRecognition || 
-    window.webkitSpeechRecognition;
-    const recognition = new window.SpeechRecognition();
-    recognition.lang = this.lang_;
-    recognition.interimResults = true;
+    name: 'speech_to_text',
+    data() {
+      return {
+        runtimeTranscription_: "",
+        transcription_: [],
+        lang_: "ko"
+      };
+    },
+    methods: {
+      startSpeechToTxt() {
+        // initialisation of voicereco
+        window.SpeechRecognition =
+        window.SpeechRecognition || 
+        window.webkitSpeechRecognition;
+        const recognition = new window.SpeechRecognition();
+        recognition.lang = this.lang_;
+        recognition.interimResults = true;
 
-    // event current voice reco word
-    recognition.addEventListener("result", event => {      
-      var text = Array.from(event.results)
-        .map(result => result[0])
-        .map(result => result.transcript)
-        .join("");
-      this.runtimeTranscription_ = text;
-    });
-    // end of transcription
-    recognition.addEventListener("end", () => {
-      this.transcription_.push(this.runtimeTranscription_);
-      this.runtimeTranscription_ = "";
-      recognition.stop();
-    });
-     recognition.start();
-   },
-
-   }
+        // event current voice reco word
+        recognition.addEventListener("result", event => {      
+          var text = Array.from(event.results)
+            .map(result => result[0])
+            .map(result => result.transcript)
+            .join("");
+          this.runtimeTranscription_ = text;
+        });
+        // end of transcription
+        recognition.addEventListener("end", () => {
+          this.transcription_.push(this.runtimeTranscription_);
+          this.runtimeTranscription_ = "";
+          recognition.stop();
+        });
+          recognition.start();
+      },
+    }
   }
   </script>

@@ -185,9 +185,7 @@
               <label for="popup">시작하기</label>
               <div>
                 <div>
-                  <b-button>
-                    라라
-                  </b-button>
+                  <Stt />
                   <label for="popup"></label>
                 </div>
                 <label for="popup"></label>
@@ -243,7 +241,7 @@ input[id="popup"]+label{
   color:#fff;
 }
 input[id="popup"]+label+div{
-  display: none;
+  opacity:0;visibility:hidden;transition:all 1s;
   position:fixed;
   top:0;
   left:0;
@@ -252,7 +250,7 @@ input[id="popup"]+label+div{
   z-index: 100;
 }
 input[id="popup"]:checked + label + div{
-  display:block;
+  opacity:1;visibility:visible;
 }
 input[id="popup"]+label+div>div{
   position:absolute;
@@ -287,10 +285,12 @@ input[id="popup"]+label+div>label{
 
 <script>
 import Footer from "../components/layout/Footer.vue";
+import Stt from "./Stt.vue";
 export default {
   name: "lb-wrap",
   components: {
     Footer,
+    Stt,
   },
 };
 </script>
