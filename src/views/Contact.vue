@@ -181,9 +181,20 @@
               계약서를 만들어보세요
               <br />
               <br />
-              <b-button href="/Stt" style="magin: 1vw" variant="outline-primary"
+              <input type="checkbox" id="popup">
+              <label for="popup">시작하기</label>
+              <div>
+                <div>
+                  <b-button>
+                    라라
+                  </b-button>
+                  <label for="popup"></label>
+                </div>
+                <label for="popup"></label>
+              </div>
+              <!-- <b-button href="/Stt" style="magin: 1vw" variant="outline-primary"
                 >시작하기</b-button
-              >
+              > -->
             </b-card-footer>
           </b-tab>
         </b-tabs>
@@ -221,6 +232,56 @@
 }
 .h1 {
   font-size: 1.5vw;
+}
+input[id="popup"]{
+  display:none;
+}
+input[id="popup"]+label{
+  display: inline-block;
+  padding: 20px;
+  background: #6351CE;
+  color:#fff;
+}
+input[id="popup"]+label+div{
+  display: none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height: 100%;
+  z-index: 100;
+}
+input[id="popup"]:checked + label + div{
+  display:block;
+}
+input[id="popup"]+label+div>div{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:500px;
+  height:300px;
+  background: #fff;
+  z-index:2;
+}
+input[id="popup"]+label+div>div>label{
+  position: absolute;
+  top:0%;
+  right:0%;
+  transform:translate(40%,-40%);
+  padding:20px;
+  background: #dd5347;
+  border-radius:100%;
+  z-index:1;
+}
+input[id="popup"]+label+div>label{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0, 0, 0, 0.664);
+  z-index:1;
 }
 </style>
 
