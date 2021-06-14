@@ -10,6 +10,9 @@ import Write from "./views/Write";
 import Stt from "./views/Stt";
 import Test from "./views/Test";
 import Used from "./views/Used";
+import sms from "./views/sendSMS";
+import email from "./views/email";
+import record from "./components/recorder";
 
 Vue.use(VueRouter);
 
@@ -49,15 +52,25 @@ const router = new VueRouter({
         component: Create
     },
     {
-
         path: "/write",
         component: Write
-        },
-        {
-
-            path: "/howtouse",
-            component: Used
-            },
+    },
+    {
+        path: "/howtouse",
+        component: Used
+    },
+    {
+        path: "/sms",
+        component: sms
+    },
+    {
+        path: "/email",
+        component: email
+    },
+    {
+        path: "/record",
+        component: record
+    },
     ]
 })
 

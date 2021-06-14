@@ -20,7 +20,7 @@ export default {
   methods: {
 
     async blockchain(){
-      const test = await axios.get("https://miners.loca.lt/read");
+      const test = await axios.get("http://localhost:3333/test");
       console.log(test);
       console.log(test.data);
 
@@ -29,7 +29,7 @@ export default {
     async get(){
         // 어떠한 데이터
 
-      axios.post("https://miners.loca.lt/test2", {data: {"name" : this.input1, "pw": this.input2}}).then( res => {
+      axios.post("http://localhost:3333/test2", {data: {"name" : this.input1, "pw": this.input2}}).then( res => {
         const parseData = JSON.parse(res.data.result);
         // 전체 Json 형식의 데이터를 불러온다
         console.log("리소스 입니다 :", parseData);
