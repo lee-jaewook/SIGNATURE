@@ -7,11 +7,13 @@ import ForgotPW from "./views/ForgotPW";
 import Contact from "./views/Contact";
 import Create from "./views/Create";
 import Write from "./views/Write";
-import Stt from "./views/Stt";
 import Test from "./views/Test";
 import Used from "./views/Used";
+import Managing from "./views/Managing";
 
+const Speech = () => import('@/components/Speech')
 Vue.use(VueRouter);
+
 
 const router = new VueRouter({
     mode: "history",
@@ -37,16 +39,21 @@ const router = new VueRouter({
         component: ForgotPW
     },
     {
-        path: "/Stt",
-        component: Stt
-    },
-    {
         path: "/Test",
         component: Test
     },
     {
         path: "/create",
         component: Create
+    },
+    {
+        path: "/managing",
+        component: Managing
+    },
+    {
+        path: '/Speech',
+        name: 'Speech',
+        component: Speech
     },
     {
 

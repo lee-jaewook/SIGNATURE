@@ -258,7 +258,7 @@ input[id="popup"]+label+div>div{
   left:50%;
   transform:translate(-50%,-50%);
   width:500px;
-  height:300px;
+  height:500px;
   background: #fff;
   z-index:2;
 }
@@ -285,7 +285,7 @@ input[id="popup"]+label+div>label{
 
 <script>
 import Footer from "../components/layout/Footer.vue";
-import Stt from "./Stt.vue";
+import Stt from "../components/Speech.vue";
 export default {
   name: "lb-wrap",
   components: {

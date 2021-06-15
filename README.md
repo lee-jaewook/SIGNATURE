@@ -2,6 +2,10 @@
 
 ## Project setup
 ```
+node ./speech-websocket/app
+```
+
+```
 npm install
 ```
 
