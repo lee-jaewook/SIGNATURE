@@ -8,10 +8,14 @@ import Contact from "./views/Contact";
 import Create from "./views/Create";
 import Write from "./views/Write";
 import Stt from "./views/Stt";
-import Send from "./views/Test";
+import Send from "./components/data/sendLaborcontract";
+import Test from "./views/Test";
 import Used from "./views/Used";
+import Managing from "./views/Managing";
 
+const Speech = () => import('@/components/Speech')
 Vue.use(VueRouter);
+
 
 const router = new VueRouter({
     mode: "history",
@@ -52,6 +56,43 @@ const router = new VueRouter({
             component: Create
         },
         {
+        path: "/",
+        component: Home
+    },
+    {
+        path: "/login",
+        component: Login
+    },
+    {
+        path: "/contact",
+        component: Contact
+    },
+    {
+        path: "/signup",
+        component: Signup
+    },
+    {
+        path: "/forgotpassword",
+        component: ForgotPW
+    },
+    {
+        path: "/Test",
+        component: Test
+    },
+    {
+        path: "/create",
+        component: Create
+    },
+    {
+        path: "/managing",
+        component: Managing
+    },
+    {
+        path: '/Speech',
+        name: 'Speech',
+        component: Speech
+    },
+    {
 
             path: "/write",
             component: Write
