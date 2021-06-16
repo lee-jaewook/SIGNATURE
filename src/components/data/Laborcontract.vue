@@ -110,7 +110,7 @@
       >
     </b-card>
     <div>
-      <b-button v-b-modal.modal-scrollable>저장하기</b-button>
+      <b-button @click="send()" v-b-modal.modal-scrollable>저장하기</b-button>
 
       <b-modal id="modal-scrollable" scrollable title="근로계약서">
         <b-card border-variant="dark" align="left">
@@ -217,8 +217,8 @@
           required
         ></b-form-input>
         <b-input-group-append>
-          <b-button size="sm" text="카카오톡 보내기" variant="outline-primary"
-            >카카오톡 전송하기</b-button
+          <b-button :href="link" size="sm" text="카카오톡 보내기" variant="outline-primary"
+            >전송하기</b-button
           >
         </b-input-group-append>
       </b-input-group>
@@ -230,6 +230,7 @@
 export default {
   data() {
     return {
+      name:"Labor",
       status: "동의하지 않음",
       employer: "",
       workers: "",
@@ -245,7 +246,15 @@ export default {
       employername: "",
       employertel: "",
       employeradr: "",
+      link:""
     };
   },
+    methods: {
+        send(){
+        this.link = "send/"+this.employer+this.name,
+        this.firstdata
+        }
+},
+
 };
 </script>
