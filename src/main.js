@@ -6,6 +6,7 @@ import Appjs from './components/backend/app'
 import VueWebSpeech from 'vue-web-speech'
 import store from './store'
 import './auth'
+import VueSpeech from 'vue-speech'
 
 // Import Bootstrap an BootstrapVue CSS files (order is important)
 import 'bootstrap/dist/css/bootstrap.css'
@@ -20,7 +21,7 @@ Vue.use(VueWebSpeech)
 Vue.use(GAuth, { clientId: '235221799021-bjgjslucul3jm980aur9acp46kv0s4o2.apps.googleusercontent.com', scope: 'profile email https://www.googleapis.com/auth/plus.login' })
 Vue.use(installElement)
 Vue.use(Appjs)
-
+Vue.use(VueSpeech)
 
 Vue.use(GAuth, {
   clientId: '768834812579-007e5802er7gj3c93p8qa9568h8bj3na.apps.googleusercontent.com', scope: 'email', prompt: 'consent', fetch_basic_profile: false

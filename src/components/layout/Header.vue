@@ -15,7 +15,7 @@
 
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
-           <b-nav-item router-link to= '/login'>{{ loggedIn ? "마이페이지" : "로그인" }}</b-nav-item>
+            <b-nav-item router-link to= '/login'>{{ loggedIn ? "마이페이지" : "로그인" }}</b-nav-item>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
